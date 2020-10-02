@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>AdminLTE 3</title>
+    <title>Mi tiendita</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -156,7 +156,7 @@
                 <a href="{{ url('/') }}" class="brand-link">
                     <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                         style="opacity: .8">
-                    <span class="brand-text font-weight-light">System Team</span>
+                    <span class="brand-text font-weight-light">Punto de venta</span>
                 </a>
 
                 <!-- Sidebar -->
@@ -166,22 +166,24 @@
                         <div class="image">
                             <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                         </div>
+                        
                         <div class="info">
                             <a href="#" class="d-block">
                                 @guest
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                                 @else
                                 {{ Auth::user()->name }}
+                                <!--
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
                                     Cerrar Sesión
                                 </a>
-
+                                
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                     style="display: none;">
                                     @csrf
                                 </form>
-
+                                -->
                                 @endguest
                             </a>
                         </div>
@@ -239,6 +241,18 @@
                                         </a>
                                     </li>
                                 </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
+                                           document.getElementById('logout-form').submit();">
+                                    <i class="nav-icon fas fa-sign-out-alt"></i>                 
+                                    <p>Cerrar sesión</p>
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    style="display: none;">
+                                    @csrf
+                                </form>
                             </li>
 
                         </ul>
