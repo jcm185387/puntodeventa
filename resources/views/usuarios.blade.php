@@ -1,24 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Email</th>
-    </tr>
-  </thead>
-  <tbody>
-  	@foreach ($users as $user)
-    <tr>
-      <th scope="row">{{$user -> id}}</th>
-      <td>{{$user -> name}}</td>
-      <td>{{$user -> email}}</td>
-    </tr>
-    @endforeach
-  </tbody>
-</table>
-
-
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Usuarios registrados</div>
+                <div class="card-body">                    
+                  </usuarios-component>                                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
