@@ -7,8 +7,8 @@
             <div class="card">
                 <div class="card-header">Usuarios registrados</div>
                 <div class="card-body">                    
-                  </usuarios-component>                                   
                 </div>
+                  <usuarios-component></usuarios-component>                                   
             </div>
         </div>
     </div>

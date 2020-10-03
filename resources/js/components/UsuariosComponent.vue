@@ -7,8 +7,8 @@
             <th scope="col">Email</th>
             </tr>
         </thead>
-        <tbody>            
-            <tr v-for="(item, index) in usuarios" :key="index" >
+        <tbody>           
+            <tr v-for="item in usuarios" >
                 <th scope="row">{{item.id}}</th>
                 <td>{{item.name}}</td>
                 <td>{{item.email}}</td>
@@ -18,11 +18,18 @@
 </template>
 <script>
 export default {
+    data(){
+        return{
+            usuarios:[],
+            loading: true,
+        }
+    },
     created(){
     axios.get('/usuarios').then(res=>{
-      this.usuarios = res.data;
-      console.log(this.usuarios);
+        console.log(res.data);
+    this.usuarios = res.data;
+
     })
-  }
+    }
 }
 </script>

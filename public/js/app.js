@@ -1960,12 +1960,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      usuarios: [],
+      loading: true
+    };
+  },
   created: function created() {
     var _this = this;
 
     axios.get('/usuarios').then(function (res) {
+      console.log(res.data);
       _this.usuarios = res.data;
-      console.log(_this.usuarios);
     });
   }
 });
@@ -37606,8 +37612,8 @@ var render = function() {
     _vm._v(" "),
     _c(
       "tbody",
-      _vm._l(_vm.usuarios, function(item, index) {
-        return _c("tr", { key: index }, [
+      _vm._l(_vm.usuarios, function(item) {
+        return _c("tr", [
           _c("th", { attrs: { scope: "row" } }, [_vm._v(_vm._s(item.id))]),
           _vm._v(" "),
           _c("td", [_vm._v(_vm._s(item.name))]),
