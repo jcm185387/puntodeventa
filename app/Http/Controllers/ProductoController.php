@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Producto;
 
 class ProductoController extends Controller
 {
@@ -11,10 +12,15 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        return view('productos');
+        if($request->ajax()){
+            //return Producto::all();
+            $productos = Producto::with('categoria')->get();    
+            return response()->json($productos,200);
+        }else{
+            return view('productos');
+        }
     }
 
     /**
@@ -36,6 +42,16 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         //
+        $producto = new Nota();
+        $producto->nombre = $request->ProductName;
+        $producto->category_id = $request->category_id ;
+        $producto->UnitPriceSupplier = $request->UnitPriceSupplier;
+        $producto->UnitPriceSale = $request->UnitPriceSale;
+        $producto->UnitsInStock = $request->UnitsInStock;
+        $producto->Picture = $request->Picture;
+        $producto->save();
+    
+        return $producto;        
     }
 
     /**
@@ -70,6 +86,15 @@ class ProductoController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $producto = Producto::find($id);
+        $producto->ProductName = $request->ProductName;
+        $producto->category_id  = $request->category_id;
+        $producto->UnitPriceSupplier  = $request->UnitPriceSupplier;
+        $producto->UnitPriceSale	  = $request->UnitPriceSale;
+        $producto->UnitsInStock  = $request->UnitsInStock;
+        $producto->Picture  = $request->Picture;
+        $producto->save();
+        return $producto;        
     }
 
     /**
@@ -81,5 +106,7 @@ class ProductoController extends Controller
     public function destroy($id)
     {
         //
+        $producto = Producto::find($id);
+        $producto->delete();
     }
 }

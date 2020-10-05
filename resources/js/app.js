@@ -23,6 +23,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('usuarios-component', require('./components/UsuariosComponent.vue').default);
 
 Vue.component('categorias-component', require('./components/CategoriasComponent.vue').default);
+Vue.component('productos-component', require('./components/ProductosComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
