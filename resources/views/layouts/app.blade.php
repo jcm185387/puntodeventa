@@ -214,34 +214,33 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item has-treeview">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon far fa-sticky-note"></i>
-                                    <p>Notas<i class="fas fa-angle-left right"></i></p>
+                            <li class="nav-item">
+                                <a href="puntodeventa"
+                                    class="{{ Request::path() === 'puntodeventa' ? 'nav-link active' : 'nav-link' }}">
+                                    <i class="nav-icon fas fa-store"></i> 
+                                    <p>
+                                        Punto de venta
+                                    </p>
                                 </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="notas/todas"
-                                            class="{{ Request::path() === 'notas/todas' ? 'nav-link active' : 'nav-link' }}">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Todas</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="notas/favoritas"
-                                            class="{{ Request::path() === 'notas/favoritas' ? 'nav-link active' : 'nav-link' }}">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Favoritas</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="notas/archivadas"
-                                            class="{{ Request::path() === 'notas/archivadas' ? 'nav-link active' : 'nav-link' }}">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Archivadas</p>
-                                        </a>
-                                    </li>
-                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="categorias"
+                                    class="{{ Request::path() === 'categorias' ? 'nav-link active' : 'nav-link' }}">
+                                    <i class="nav-icon fas fa-users"></i>
+                                    <p>
+                                        Categorías                                        
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="productos"
+                                    class="{{ Request::path() === 'productos' ? 'nav-link active' : 'nav-link' }}">
+                                    <i class="nav-icon fas fa-users"></i>
+                                    <p>
+                                        Productos                                        
+                                    </p>
+                                </a>
                             </li>
 
                             <li class="nav-item">
@@ -249,18 +248,6 @@
                                            document.getElementById('logout-form').submit();">
                                     <i class="nav-icon fas fa-sign-out-alt"></i>                 
                                     <p>Cerrar sesión</p>
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-                                </form>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();">
-                                    <i class="nav-icon fas fa-store"></i>                 
-                                    <p>Punto de Venta</p>
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                     style="display: none;">

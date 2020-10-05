@@ -28,6 +28,13 @@ Auth::routes();
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/','HomeController@index')->name('home');
 Route::get('/usuarios','UserController@index');
+//Route::get('/categorias', 'CategoriaController@index');
+
+//rutas del punto de venta
+Route::get('/puntodeventa', 'VentaController@index');
+Route::get('/productos', 'ProductoController@index');
+
+Route::get('/categorias', 'CategoriaController@index');
 
 Auth::routes();
 

@@ -1,0 +1,5 @@
+<i class="nav-icon fas fa-store"></i> 
+
+1.-Pendiente crear el modelo de las ventas.
+
+Primero hacer todo el proceso de los artículos.
