@@ -8,7 +8,7 @@
                 <h5 class="card-title">Proyectos</h5>
 
                 <p class="card-text">
-                    <span>En esta sección podremos agregar todos los productos que se agreguen al inventario</span>                    
+                    <span>En esta sección podremos configurar los precios de los productos registrados</span>                    
                 </p>
                 <div class="col-12">
                     <div class="pull-right" style="float: right;">
@@ -30,5 +30,5 @@
         </div>                              
     </div>
 </div>
-<createproduct-component></createproduct-component>
+@include('createproduct');
 @endsection

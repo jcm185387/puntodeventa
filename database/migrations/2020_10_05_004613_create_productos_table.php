@@ -18,9 +18,10 @@ class CreateProductosTable extends Migration
             $table->string('ProductName');
             $table->bigInteger('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categorias');
-            $table->float('UnitPriceSupplier');
-            $table->float('UnitPriceSale');
-            $table->integer('UnitsInStock');
+            //$table->float('UnitPriceSupplier');
+            //$table->float('UnitPriceSale')->nullable();
+            $table->float('UnitPriceSale')->default('0');
+            //$table->integer('UnitsInStock');
             $table->string('Picture');
             $table->timestamps();
         });

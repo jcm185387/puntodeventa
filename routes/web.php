@@ -36,6 +36,8 @@ Route::get('/productos', 'ProductoController@index');
 
 Route::get('/categorias', 'CategoriaController@index');
 
+Route::get('/configuradordeprecios', 'ProductoController@precios');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

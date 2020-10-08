@@ -23,6 +23,17 @@ class ProductoController extends Controller
         }
     }
 
+    public function precios(Request $request)
+    {
+        if($request->ajax()){
+            //return Producto::all();
+            $productos = Producto::with('categoria')->get();    
+            return response()->json($productos,200);
+        }else{
+            return view('configuradordeprecios');
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+
     <div class="row">
       <div class="col-lg-6">
         <div class="card">
@@ -28,9 +29,8 @@
             <a href="#" class="card-link">Card link</a>
             <a href="#" class="card-link">Another link</a>
           </div>
-        </div><!-- /.card -->
         </div>
-        <!-- /.col-md-6 -->
+        </div>
         <div class="col-lg-6">
             <div class="card">
               <div class="card-header">
@@ -56,7 +56,7 @@
               </div>
             </div>
         </div>
-          <!-- /.col-md-6 -->
     </div>
-        <!-- /.row -->
+<!-- /.row -->
+
 @endsection

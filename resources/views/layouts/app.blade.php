@@ -242,7 +242,33 @@
                                     </p>
                                 </a>
                             </li>
-
+                            <li class="nav-item">
+                                <a href="productos"
+                                    class="{{ Request::path() === 'productos' ? 'nav-link active' : 'nav-link' }}">
+                                    <i class="nav-icon fas fa-users"></i>
+                                    <p>
+                                        Órdenes de compra                                        
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="productos"
+                                    class="{{ Request::path() === 'productos' ? 'nav-link active' : 'nav-link' }}">
+                                    <i class="nav-icon fas fa-users"></i>
+                                    <p>
+                                        Inventario                                        
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="configuradordeprecios"
+                                    class="{{ Request::path() === 'configuradordeprecios' ? 'nav-link active' : 'nav-link' }}">
+                                    <i class="nav-icon fas fa-users"></i>
+                                    <p>
+                                        Configurador de precios                                        
+                                    </p>
+                                </a>
+                            </li>
                             <li class="nav-item">
                                 <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
@@ -278,7 +304,7 @@
             <!-- /.content-wrapper -->
             <footer class="main-footer">
                 <!-- NO QUITAR -->
-                <strong>Tutoriales YouTube
+                <strong>Punto de venta by Inovateka
                     <div class="float-right d-none d-sm-inline-block">
                         <b>Version</b> 1.0
                     </div>
